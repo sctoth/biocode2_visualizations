@@ -67,7 +67,7 @@ data <- data %>%
 # Calculate total coverage per Sample
 sample_totals <- data %>%
   group_by(Sample) %>%
-  summarise(total_coverage = sum(coverage, na.rm = TRUE)) %>%
+  summarise(total_coverage = mean(coverage, na.rm = TRUE)) %>%
   arrange(desc(total_coverage))
 
 # Reorder Sample factor levels by descending total coverage
